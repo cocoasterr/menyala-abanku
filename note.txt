@@ -1,0 +1,45 @@
+daftar
+* regist (nama, nik, nomor_hp, pin)
+* validation
+    * kalau nik sudah ada return 400 (nik sudah terdaftar)
+    * kalau nomor_hp sudah ada return 400 (nik sudah terdaftar)
+* kalau berhasil generate no_rekening
+
+login
+* payload nya no_rekening dan pin
+* jika tidak ditemukan error 400 user not found
+* jika berhasil generate JWT cookies
+
+change-pin
+* validation harus login
+* palyload nomor_rekening, current_pin dan new_pin
+* kalau norek ada dan current pin salah, akan return 400 pin salah
+
+logout
+* remove jwt
+
+
+tabung
+* harus login
+* payload nomor rekening, nominal, pin
+* jika norek tidak ditemukan akan return 400 
+
+tarik
+* harus login
+* cek saldo dulu
+* payload (nomor_rekening, nominal, pin)
+
+transfer
+* harus login
+* cek saldo dulu
+* payload (nomor_rekening_asal, nomor_rekening tujuan, nominal)
+* kalau saldo tidak cukup resp 400
+
+saldo/nomor_rekening
+* harus login dulu
+
+mutasi
+login dulu
+waktu, 
+kode_transaksi (C untuk tabung, D untuk tarik, T untuk transfer, U untuk terima transfer),
+dan nominal.

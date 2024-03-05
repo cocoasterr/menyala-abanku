@@ -1,0 +1,11 @@
+fastapi
+fastapi_jwt_auth
+sqlalchemy
+pydantic==1.10.2
+passlib
+# psycopg2-binary
+psycopg2
+uvicorn
+starlette
+pydantic[email]
+python-dotenv
