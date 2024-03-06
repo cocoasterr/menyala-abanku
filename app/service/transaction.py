@@ -30,6 +30,9 @@ async def serviceTarik(id: str, collection_db: Collection, repo: type,
 
     try:
         new_data = payload.dict(exclude_unset=True)
+        if new_data['nominal'] < 50_000:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                                detail='nominal must more than Rp.50000!')
         tb_name = collection_db.__tablename__
 
         user = await repo.getById(id, tb_name)
@@ -56,6 +59,10 @@ async def serviceTabung(id: str, collection_db: Collection, repo: type,
 
     try:
         new_data = payload.dict(exclude_unset=True)
+        if new_data['nominal'] < 25_000:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                                detail='nominal must more than Rp.25000!')
+
         tb_name = collection_db.__tablename__
 
         user = await repo.getById(id, tb_name)
@@ -84,6 +91,9 @@ async def servicetransfer(id: str, collection_db: Collection, repo: type,
         return entity(res)
     try:
         new_data = payload.dict(exclude_unset=True)
+        if new_data['nominal'] < 1:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                                detail='nominal must more than 0!')
         rek_from = new_data['nomor_rekening_from']
         rek_dest = new_data['nomor_rekening_dest']
 

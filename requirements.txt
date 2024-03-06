@@ -4,11 +4,19 @@ sqlalchemy
 pydantic==1.10.2
 passlib
 psycopg2-binary
+<<<<<<< HEAD
 #psycopg2
+=======
+# psycopg2
+>>>>>>> 113bdd281c13936704b767a932036b078e0a6143
 uvicorn
 starlette
 pydantic[email]
 python-dotenv
 pandas
+<<<<<<< HEAD
 openpyxl
 
+=======
+openpyxl
+>>>>>>> 113bdd281c13936704b767a932036b078e0a6143
